@@ -7,9 +7,10 @@ import json
 from utils import load_csv, mock_health_api, mock_water_api, real_rainfall_api
 import pickle
 from sklearn.preprocessing import StandardScaler
+import os
 
 app = Flask(__name__)
-genai.configure(api_key='GEMINI_API_KEY')
+genai.configure(api_key=os.environ.get('GEMINI_API_KEY', 'YOUR_GEMINI_API_KEY_HERE'))
 model_gemini = genai.GenerativeModel('gemini-1.5-flash')
 
 # Load ML model
