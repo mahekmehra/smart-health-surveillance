@@ -9,7 +9,7 @@ import pickle
 from sklearn.preprocessing import StandardScaler
 
 app = Flask(__name__)
-genai.configure(api_key='AIzaSyDb0DwXDbWeruX1Rh1HcnDzYkDSLheCOdo')
+genai.configure(api_key='YOUR_GEMINI_API_KEY_HERE')
 model_gemini = genai.GenerativeModel('gemini-1.5-flash')
 
 # Load ML model
