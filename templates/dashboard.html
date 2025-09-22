@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Punjab Floods Dashboard</h1>
+    <h2>Flood Stats</h2>
+    <table>
+        <tr><th>District</th><th>Affected</th><th>Villages</th><th>Displaced</th><th>Source</th></tr>
+        {% for stat in flood_stats %}
+        <tr><td>{{ stat.district }}</td><td>{{ stat.affected_population }}</td><td>{{ stat.villages_affected }}</td><td>{{ stat.displaced }}</td><td>{{ stat.source }}</td></tr>
+        {% endfor %}
+    </table>
+    <img src="{{ url_for('static', filename='images/punjab_map.png') }}" alt="Punjab Flood Map" width="400">
+    <h2>Hotspots</h2>
+    <table>
+        <tr><th>Area</th><th>Risk</th><th>Disease</th><th>Cases</th></tr>
+        {% for hotspot in hotspots %}<tr><td>{{ hotspot.area }}</td><td>{{ hotspot.risk }}</td><td>{{ hotspot.disease }}</td><td>{{ hotspot.cases }}</td></tr>{% endfor %}
+    </table>
+    <a href="/">Back</a>
+</body>
+</html>

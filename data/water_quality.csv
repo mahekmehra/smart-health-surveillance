@@ -1,0 +1,6 @@
+date,river,district,pH,turbidity_ntu,coliform_mpn,source
+2025-09-15,Sutlej,Ferozepur,8.5,60,2500,"CPCB NWMP 2020-2024, flood-adjusted"
+2025-09-15,Beas,Amritsar,7.2,150,6000,"CPCB NWMP 2020-2024, flood-adjusted"
+2025-09-15,Ravi,Gurdaspur,8.0,100,4000,"CPCB NWMP 2020-2024, flood-adjusted"
+2025-09-20,Sutlej,Ferozepur,8.4,65,2700,"CPCB NWMP 2020-2024, flood-adjusted"
+2025-09-20,Beas,Amritsar,7.1,160,6200,"CPCB NWMP 2020-2024, flood-adjusted"

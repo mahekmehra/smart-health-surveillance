@@ -1,0 +1,31 @@
+{
+  "vaccination_schedules": {
+    "english": "For children: Polio at birth, 6 weeks, 10 weeks; Hepatitis B at birth, 6 weeks, 14 weeks. Adults: COVID booster every 6 months.",
+    "hindi": "बच्चों के लिए: जन्म पर पोलियो, 6 सप्ताह, 10 सप्ताह; जन्म पर हेपेटाइटिस बी, 6 सप्ताह, 14 सप्ताह। वयस्कों के लिए: हर 6 महीने में कोविड बूस्टर।",
+    "punjabi": "ਬੱਚਿਆਂ ਲਈ: ਜਨਮ ਸਮੇਂ ਪੋਲੀਓ, 6 ਹਫ਼ਤੇ, 10 ਹਫ਼ਤੇ; ਜਨਮ ਸਮੇਂ ਹੈਪੇਟਾਈਟਿਸ ਬੀ, 6 ਹਫ਼ਤੇ, 14 ਹਫ਼ਤੇ। ਵੱਡੇ ਲੋਕਾਂ ਲਈ: ਹਰ 6 ਮਹੀਨੇ ਵਿੱਚ ਕੋਵਿਡ ਬੂਸਟਰ।"
+  },
+  "disease_symptoms": {
+    "cholera": {
+      "english": "Severe diarrhea, vomiting, dehydration.",
+      "hindi": "गंभीर दस्त, उल्टी, निर्जलीकरण।",
+      "punjabi": "ਸਖ਼ਤ ਦਸਤ, ਉਲਟੀਆਂ, ਨਿਰਜਲੀਕਰਨ।"
+    },
+    "typhoid": {
+      "english": "High fever, headache, stomach pain.",
+      "hindi": "तेज बुखार, सिरदर्द, पेट दर्द।",
+      "punjabi": "ਤੇਜ਼ ਬੁਖਾਰ, ਸਿਰ ਦਰਦ, ਪੇਟ ਦਰਦ।"
+    },
+    "diarrhea": {
+      "english": "Severe loose stools, dehydration, abdominal cramps (common post-flood).",
+      "hindi": "गंभीर पतले दस्त, निर्जलीकरण, पेट में ऐंठन (बाढ़ के बाद आम)।",
+      "punjabi": "ਸਖ਼ਤ ਪਤਲੇ ਦਸਤ, ਨਿਰਜਲੀਕਰਨ, ਪੇਟ ਵਿੱਚ ਐਂਠਣ (ਹੜ੍ਹਾਂ ਤੋਂ ਬਾਅਦ ਆਮ)।"
+    }
+  },
+  "alerts": [
+    {
+      "message": "Punjab Floods 2025: 2M affected across 23 districts, high cholera/typhoid risk (ReliefWeb Sep 2025).",
+      "hindi": "पंजाब बाढ़ 2025: 23 जिलों में 20 लाख प्रभावित, हैजा/टाइफाइड का उच्च जोखिम (रिलीफवेब सितंबर 2025)।",
+      "punjabi": "ਪੰਜਾਬ ਹੜ੍ਹਾਂ 2025: 23 ਜ਼ਿਲ੍ਹਿਆਂ ਵਿੱਚ 20 ਲੱਖ ਪ੍ਰਭਾਵਿਤ, ਕੋਲਰਾ/ਟਾਈਫਾਈਡ ਦਾ ਉੱਚ ਖ਼ਤਰਾ (ਰਿਲੀਫ਼ਵੈੱਬ ਸਤੰਬਰ 2025)।"
+    }
+  ]
+}

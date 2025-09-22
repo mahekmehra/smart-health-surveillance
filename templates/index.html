@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Health Surveillance - Punjab Floods 2025</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Punjab Floods 2025 Health Surveillance</h1>
+    
+    <h2>Report Symptoms</h2>
+    <form id="reportForm" class="form-container">
+        <div class="form-group">
+            <label for="symptom">Enter Symptom</label>
+            <input type="text" name="symptom" id="symptom" placeholder="e.g., diarrhea" required>
+        </div>
+        <div class="form-group">
+            <label for="location">Enter Location</label>
+            <input type="text" name="location" id="location" placeholder="e.g., Ferozepur" required>
+        </div>
+        <div class="form-group">
+            <label for="count">Enter Case Count</label>
+            <input type="number" name="count" id="count" placeholder="Number of cases" value="1">
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    
+    <h2>Outbreak Prediction</h2>
+    <form id="predictForm" class="form-container">
+        <div class="form-group">
+            <label for="diarrhea">Enter Diarrhea Cases</label>
+            <input type="number" name="diarrhea" id="diarrhea" placeholder="Diarrhea cases" value="10000">
+        </div>
+        <div class="form-group">
+            <label for="typhoid">Enter Typhoid Cases</label>
+            <input type="number" name="typhoid" id="typhoid" placeholder="Typhoid cases" value="300">
+        </div>
+        <div class="form-group">
+            <label for="cholera">Enter Cholera Cases</label>
+            <input type="number" name="cholera" id="cholera" placeholder="Cholera cases" value="100">
+        </div>
+        <div class="form-group">
+            <label for="hepatitis">Enter Hepatitis Cases</label>
+            <input type="number" name="hepatitis" id="hepatitis" placeholder="Hepatitis cases" value="200">
+        </div>
+        <button type="submit">Predict Risk</button>
+    </form>
+    <div id="predResult"></div>
+    
+    <h2>API Fetch (Simulated)</h2>
+    <button onclick="fetchHealth()">Fetch Health Data</button>
+    <div id="healthData"></div>
+    <button onclick="fetchWater()">Fetch Water Data</button>
+    <div id="waterData"></div>
+    
+    <h2>Chatbot for Health Education</h2>
+    <select id="language">
+        <option value="english">English</option>
+        <option value="hindi">Hindi</option>
+        <option value="punjabi">Punjabi</option>
+    </select>
+    <div id="chatbox"></div>
+    <input type="text" id="userInput" placeholder="Ask about health...">
+    <button onclick="sendMessage()">Send</button>
+    
+    <h2>Links</h2>
+    <a href="/dashboard">Dashboard</a> | <a href="/alerts?lang=english">Alerts</a>
+    
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
