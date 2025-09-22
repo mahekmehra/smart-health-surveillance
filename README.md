@@ -89,49 +89,6 @@ health_surveillance_prototype/
   scikit-learn==1.5.2
   ```
 
-## Setup Instructions
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/<your_username>/<repo_name>.git
-   cd <repo_name>
-   ```
-
-2. **Set Up Virtual Environment**:
-   ```bash
-   python -m venv venv
-   venv\Scripts\activate  # Windows
-   # or source venv/bin/activate (macOS/Linux)
-   ```
-
-3. **Install Dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Get Gemini API Key**:
-   - Sign up at [Google AI Studio](https://aistudio.google.com/).
-   - Generate an API key and set it as an environment variable:
-     ```bash
-     set GEMINI_API_KEY=your_api_key  # Windows
-     # or export GEMINI_API_KEY=your_api_key (macOS/Linux)
-     ```
-
-5. **Download Placeholder Images**:
-   - For `static/images/hotspot_map.png` and `punjab_map.png`, download flood-related images from [Unsplash](https://unsplash.com/) (search "flood map").
-   - Place in `static/images/`.
-
-6. **Train ML Model**:
-   - Generate `model.pth` and `scaler.pkl`:
-     ```bash
-     python ml_model.py
-     ```
-
-7. **Run the App**:
-   ```bash
-   python app.py
-   ```
-   - Open `http://127.0.0.1:5000/` in a browser.
-
 ## Usage
 - **Homepage (`/`)**: Access all features via forms and links.
   - **Report Symptoms**: Enter symptom (e.g., "diarrhea"), location (e.g., "Ferozepur"), and case count.
@@ -148,32 +105,6 @@ health_surveillance_prototype/
 - **mock_data.json**: Custom translations for alerts and health education.
 - **reports.csv**: Dynamically generated from user reports.
 
-## Collaboration
-- **Contributing**:
-  - Fork or clone the repo.
-  - Create a branch: `git checkout -b feature-name`.
-  - Commit changes: `git commit -m "Added feature X"`.
-  - Push: `git push origin feature-name`.
-  - Submit a pull request on GitHub.
-- **Add Collaborators**:
-  - Go to repo Settings → Collaborators → Add people (by GitHub username/email).
-- **Security**:
-  - `.gitignore` excludes `venv/`, `*.pth`, `*.pkl`, `__pycache__/`.
-  - Gemini API key is set via environment variable (`GEMINI_API_KEY`).
-
-## Troubleshooting
-- **Gemini API Errors**:
-  - Verify `GEMINI_API_KEY` is set: `echo %GEMINI_API_KEY%` (Windows).
-  - Regenerate key at [Google AI Studio](https://aistudio.google.com/).
-- **Prediction Issues**:
-  - Ensure `model.pth` and `scaler.pkl` exist (run `python ml_model.py`).
-  - Test with `test_model.py` (see repository for script).
-- **File Not Found**:
-  - Verify `data/`, `static/`, `templates/` paths.
-  - Use absolute paths if needed (e.g., `C:\Users\MAHEK MEHRA\...`).
-- **Git Issues**:
-  - Authentication: Use Personal Access Token (PAT) from [github.com/settings/tokens](https://github.com/settings/tokens).
-  - Conflicts: Run `git pull origin main` and resolve manually.
 
 ## Future Enhancements
 - Integrate real-time APIs (IDSP, CPCB, IMD).
