@@ -1,25 +1,90 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
-    <h1>Punjab Floods Dashboard</h1>
-    <h2>Flood Stats</h2>
-    <table>
-        <tr><th>District</th><th>Affected</th><th>Villages</th><th>Displaced</th><th>Source</th></tr>
-        {% for stat in flood_stats %}
-        <tr><td>{{ stat.district }}</td><td>{{ stat.affected_population }}</td><td>{{ stat.villages_affected }}</td><td>{{ stat.displaced }}</td><td>{{ stat.source }}</td></tr>
-        {% endfor %}
-    </table>
-    <img src="{{ url_for('static', filename='images/punjab_map.png') }}" alt="Punjab Flood Map" width="400">
-    <h2>Hotspots</h2>
-    <table>
-        <tr><th>Area</th><th>Risk</th><th>Disease</th><th>Cases</th></tr>
-        {% for hotspot in hotspots %}<tr><td>{{ hotspot.area }}</td><td>{{ hotspot.risk }}</td><td>{{ hotspot.disease }}</td><td>{{ hotspot.cases }}</td></tr>{% endfor %}
-    </table>
-    <a href="/">Back</a>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block title %}Dashboard · Smart Health Surveillance{% endblock %}
+
+{% block content %}
+		<div class="layout-2col">
+			<aside class="sidebar">
+				<nav class="side-nav">
+					<a href="#flood-stats">Flood Statistics</a>
+					<a href="#hotspots">Hotspots</a>
+					<a href="#map">Map</a>
+				</nav>
+			</aside>
+			<section class="content-col">
+		<section id="flood-stats" class="grid section-block">
+			<div class="card">
+				<div class="card-header">
+					<h2>Flood Statistics</h2>
+					<div class="controls">
+						<input id="filter-flood" type="search" placeholder="Filter by district or source">
+					</div>
+				</div>
+				<div class="table-responsive">
+					<table id="table-flood" class="table">
+						<thead>
+							<tr>
+								<th data-sort="text">District</th>
+								<th data-sort="number">Affected</th>
+								<th data-sort="number">Villages</th>
+								<th data-sort="number">Displaced</th>
+								<th data-sort="text">Source</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for stat in flood_stats %}
+							<tr>
+								<td>{{ stat.district }}</td>
+								<td>{{ stat.affected_population }}</td>
+								<td>{{ stat.villages_affected }}</td>
+								<td>{{ stat.displaced }}</td>
+								<td>{{ stat.source }}</td>
+							</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div id="hotspots" class="card">
+				<div class="card-header">
+					<h2>Hotspots</h2>
+					<div class="controls">
+						<input id="filter-hotspots" type="search" placeholder="Filter by area, disease, or risk">
+					</div>
+				</div>
+				<div class="table-responsive">
+					<table id="table-hotspots" class="table">
+						<thead>
+							<tr>
+								<th data-sort="text">Area</th>
+								<th data-sort="text">Risk</th>
+								<th data-sort="text">Disease</th>
+								<th data-sort="number">Cases</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for hotspot in hotspots %}
+							<tr>
+								<td>{{ hotspot.area }}</td>
+								<td>
+									<span class="badge {{ hotspot.risk | lower }}">{{ hotspot.risk }}</span>
+								</td>
+								<td>{{ hotspot.disease }}</td>
+								<td>{{ hotspot.cases }}</td>
+							</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</section>
+
+		<section id="map" class="map-section card section-block">
+			<div class="map-wrapper">
+				<img src="{{ url_for('static', filename='images/punjab_map.png') }}" alt="Punjab Flood Map" class="map-image">
+				<div class="map-caption">Flood-affected areas (illustrative). Replace with interactive GIS in production.</div>
+			</div>
+		</section>
+			</section>
+		</div>
+{% endblock %}
