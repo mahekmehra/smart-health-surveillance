@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="color-scheme" content="dark light">
+	<title>{% block title %}Smart Health Surveillance{% endblock %}</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<script>
+		// Set initial theme before CSS loads to avoid flash
+		(function() {
+			try {
+				var root = document.documentElement;
+				var saved = localStorage.getItem('theme');
+				var prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+				var theme = saved ? saved : (prefersLight ? 'light' : 'dark');
+				if (theme === 'dark') root.classList.add('dark'); else root.classList.remove('dark');
+				root.setAttribute('data-theme', theme);
+			} catch (e) {}
+		})();
+	</script>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v={{ range(1, 999999)|random }}">
+</head>
+<body>
+	<header class="app-header">
+		<h1>Punjab Floods 2025 · Health Surveillance</h1>
+		<nav class="app-nav">
+			<a href="/" {% if request.path=='/' %}class="active"{% endif %}>Home</a>
+			<a href="/dashboard" {% if request.path.startswith('/dashboard') %}class="active"{% endif %}>Dashboard</a>
+			<a href="/alerts" {% if request.path.startswith('/alerts') %}class="active"{% endif %}>Alerts</a>
+			<button id="theme-toggle" aria-label="Toggle theme" class="transition-colors duration-300 flex items-center justify-center" title="Toggle theme">
+			  <svg id="sun-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20">
+			    <path d="M10 15a5 5 0 100-10 5 5 0 000 10z"></path>
+			    <path fill-rule="evenodd" d="M10 1v2M10 17v2M4.22 4.22l1.42 1.42M14.36 14.36l1.42 1.42M1 10h2M17 10h2M4.22 15.78l1.42-1.42M14.36 5.64l1.42-1.42" clip-rule="evenodd"></path>
+			  </svg>
+			  <svg id="moon-icon" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+			    <path d="M17.293 13.293A8 8 0 116.707 2.707a7 7 0 0010.586 10.586z"></path>
+			  </svg>
+			</button>
+		</nav>
+	</header>
+
+	<nav class="breadcrumbs container" aria-label="Breadcrumb">
+		<a href="/">Home</a>
+		<span>/</span>
+		{% if request.path.startswith('/dashboard') %}
+		<span>Dashboard</span>
+		{% elif request.path.startswith('/alerts') %}
+		<span>Alerts</span>
+		{% else %}
+		<span>Overview</span>
+		{% endif %}
+	</nav>
+	<main class="container">
+		{% block content %}{% endblock %}
+	</main>
+	<footer class="app-footer">
+		<div class="footer-inner">
+			<p>&copy; 2025 Smart Health Surveillance Prototype</p>
+			<nav class="footer-nav">
+				<a href="#top">Back to top</a>
+				<a href="/dashboard">Dashboard</a>
+				<a href="/alerts">Alerts</a>
+			</nav>
+		</div>
+	</footer>
+	<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
+
