@@ -1,6 +1,8 @@
 venv/
-*.pth
-*.pkl
 __pycache__/
 .env
 .env.*
+*.pth
+*.pkl
+!model.pth
+!scaler.pkl
