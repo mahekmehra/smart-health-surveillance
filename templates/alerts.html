@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% block title %}Alerts · Smart Health Surveillance{% endblock %}
 {% block content %}
-    <section class="card">
-        <div class="card-header"><h2>Real-Time Alerts</h2></div>
+    <section class="card" style="color: var(--text);">
+        <div class="card-header"><h2 style="color: var(--text);">Real-Time Alerts</h2></div>
         <div class="card-body">
             <ul>
                 {% for alert in alerts %}
-                <li>{{ alert.message }}</li>
+                <li style="color: var(--text);">{{ alert.message }}</li>
                 {% endfor %}
             </ul>
         </div>
