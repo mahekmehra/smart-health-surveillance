@@ -206,3 +206,12 @@ button:focus-visible, .chat-input:focus-visible, input:focus-visible, select:foc
   color: var(--text);
   font-size: 15px;
 }
+/* Make home sections brown only in dark theme */
+.dark section {
+  color: #251b0d;        /* light text for contrast */
+}
+
+/* Optional: smooth transition for mode switch */
+section {
+  transition: background 0.3s ease, color 0.3s ease;
+}
