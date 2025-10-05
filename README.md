@@ -87,6 +87,7 @@ health_surveillance_prototype/
   requests==2.32.4
   pandas==2.2.2
   scikit-learn==1.5.2
+  python-dotenv==1.0.1
   ```
 
 ## Usage
